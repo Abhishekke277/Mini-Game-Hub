@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Mini Game Hub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🎮 Mini Game Hub 🎮</h1>
+
+    <!-- Carousel -->
+    <div class="carousel">
+      <div class="slides">
+        <!-- Tic Tac Toe -->
+        <div class="slide" id="tictokalign">
+          <main>
+            <!-- Winner message + New Game button (hidden at first) -->
+            <div class="msg-container hide">
+              <p id="msg">Winner</p>
+              <button id="new-btn">New Game</button>
+            </div>
+
+            <!-- Game board container -->
+            <div class="game-area">
+              <h1 id="title">Tic Tac Toe game</h1>
+              <div class="container1">
+                <div class="game1">
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                  <button class="box"></button>
+                </div>
+              </div>
+              <button id="reset-btn">Reset Game</button>
+            </div>
+          </main>
+        </div>
+
+        <!-- Rock Paper Scissors -->
+        <div class="slide">
+          <h1>Rock Paper Scissors</h1>
+          <div class="choices">
+            <div class="choice" id="rock">
+              <img src="rock.png" />
+            </div>
+            <div class="choice" id="paper">
+              <img src="paper.png" />
+            </div>
+            <div class="choice" id="scissors">
+              <img src="scissors.png" />
+            </div>
+          </div>
+
+          <div class="score-board">
+            <div class="score">
+              <p id="user-score">0</p>
+              <p>You</p>
+            </div>
+            <div class="score">
+              <p id="comp-score">0</p>
+              <p>Comp</p>
+            </div>
+          </div>
+
+          <div class="msg-container-rps">
+            <p id="msgrps">Play your move</p>
+          </div>
+        </div>
+
+        <!-- Mind Game -->
+        <div class="slide">
+          <h1>Mind Game 🧠</h1>
+          <p id="question"></p>
+          <input type="number" id="answer" placeholder="Your Answer" />
+          <button onclick="checkMindGame()">Check</button>
+          <p id="mindResult"></p>
+        </div>
+
+        <!-- Number Guessing -->
+        <div class="slide">
+          <h1>Guess the Number <i class="fa-solid fa-user"></i></h1>
+          <p>Pick a number between 1–20</p>
+          <input type="number" id="guessInput" />
+          <button onclick="checkGuess()">Guess</button>
+          <p id="guessResult"></p>
+        </div>
+
+        <!-- Memory Game -->
+        <div class="slide" id="last-container">
+          <h1>Momory game <i class="fa-solid fa-brain"></i></h1>
+          <div class="game-container" id="game"></div>
+        </div>
+      </div>
+      <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+      <button class="btn next" onclick="moveSlide(1)">❯</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
